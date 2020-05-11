@@ -1,0 +1,145 @@
+/* open-sans-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+        url('../fonts/open-sans-v17-latin-ext_latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v17-latin-ext_latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700 - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'),
+        url('../fonts/open-sans-v17-latin-ext_latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/open-sans-v17-latin-ext_latin-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+.whole-todo-table-wrapper {
+    //default theme in wordpress overwrite max-width, thats why !important is nesecery
+    max-width: 250px !important;
+    width: 100%;
+    margin: 0 auto;
+    color: red;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    font-family: 'Open Sans', sans-serif;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            border-bottom: 1px solid #dddddd;
+
+            &.one-to-do:first-of-type {
+                background-color: #f3f3f3;
+
+                .checkbox-wrapper {
+                    padding-top: 9px;
+                    padding-bottom: 1px;
+                }
+
+                input[type="text"] {
+                    border: 0;
+                    resize: none;
+                    height: 41px;
+                    border: none;
+                    background: transparent;
+                    padding: 0;
+                    display: inline;
+                    max-width: 70%;
+                    padding: 7px;
+                    padding-top: 10px;
+                    padding-bottom: 0;
+                    border-left: 1px solid #e4d6d2;
+                    font-size: 13px;
+                    font-family: 'Open Sans', sans-serif;
+                }
+            }
+
+            &:last-of-type {
+                border: none;
+            }
+
+            .delete-this {
+                margin-left: auto;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                font-size: 12px;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            .checkbox-wrapper {
+                margin-right: 3px;
+                padding: 0 7px 0 13px;
+                border-right: 1px solid #e4d6d2;
+            }
+
+            input[type="text"] {
+                height: 31px;
+                border: none;
+                background: transparent;
+                display: inline;
+                padding: 0 7px 0;
+                border-left: 1px solid #e4d6d2;
+                font-size: 13px;
+                max-width: 70%;
+                text-overflow: ellipsis;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            input[type="checkbox"] {
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                position: relative;
+                top: 2px;
+                display: inline-block;
+                margin: 0;
+                width: 17px;
+                min-width: 17px;
+                height: 17px;
+                background: #fff;
+                border-radius: 1px;
+                border: 0.1rem solid #6bb3ca;
+                box-shadow: none;
+                cursor: pointer;
+
+                &:checked::before {
+                    content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23000000%27%2F%3E%3C%2Fsvg%3E");
+                    position: absolute;
+                    display: inline-block;
+                    margin: -0.1875rem 0 0 -0.25rem;
+                    height: 19.83px;
+                    width: 19.83px;
+                }
+            }
+
+            &[data-status='done'] {
+                input[type="checkbox"] {
+                    opacity: 0.4;
+                    background-color: #d8d7d7;
+                    border: 0.1rem solid #b4b4b4;
+
+                    &:checked::before {}
+                }
+            }
+        }
+
+    }
+}
